@@ -14,7 +14,35 @@ cd SAM-FC
 pip install -r requirements.txt
 ```
 
-> **Data Notice:** Due to original licensing, raw CSVs are not redistributed. See [data/README.md](data/README.md) to place `ViFactCheck` (AAAI 2025) and `ViWikiFC` (2024) in `data/dataset_raw/`.
+---
+
+## 📁 Datasets Setup
+
+Due to dataset licensing and copyright policies of the respective original authors, raw dataset CSV files are not distributed directly in this repository. Please obtain the datasets from the official authors/releases as cited in the paper, and place the CSV files in `data/dataset_raw/`:
+
+### 1. ViFactCheck (Multi-domain News)
+* **Citation:** *ViFactCheck: A New Benchmark Dataset and Methods for Multi-Domain News Fact-Checking in Vietnamese* (AAAI 2025).  
+  *Authors: T. T. Hoa, T. Q. Duy, K. Q. Tran, K. Van Nguyen.*
+* **Files:** `train-vifactcheck.csv`, `dev-vifactcheck.csv`, `test-vifactcheck.csv`
+* **Columns:** `Statement`, `Evidence`, `labels` (0: Supported, 1: Refuted, 2: NEI)
+
+### 2. ViWikiFC (Vietnamese Wikipedia)
+* **Citation:** *ViWikiFC: Fact-Checking for Vietnamese Wikipedia-Based Textual Knowledge Source* (LREC-COLING 2024 / arXiv).  
+  *Authors: H. T. Le, L. T. To, M. T. Nguyen, K. Van Nguyen.*
+* **Files:** `train-factcheckwiki.csv`, `dev-factcheckwiki.csv`, `test-factcheckwiki.csv`
+* **Columns:** `claim`, `evidence`, `gold_label` (`Supports`, `Refutes`, `Not_Enough_Information`)
+
+### Expected Directory Layout
+```text
+data/
+└── dataset_raw/
+    ├── train-vifactcheck.csv
+    ├── dev-vifactcheck.csv
+    ├── test-vifactcheck.csv
+    ├── train-factcheckwiki.csv
+    ├── dev-factcheckwiki.csv
+    └── test-factcheckwiki.csv
+```
 
 ---
 
@@ -68,23 +96,9 @@ Self-contained GPU notebooks are available in `notebooks/`:
 
 ```text
 SAM-FC/
-├── data/           # Dataset guidelines (data/README.md) & raw CSV storage
+├── data/           # Dataset directory layout and raw CSV storage
 ├── src/            # Core models, loss functions, diff markers, and trainer
 ├── scripts/        # Reproduction scripts for Tables 2-5, Figures 3-4, and training
 ├── notebooks/      # Self-contained Google Colab notebooks
 └── outputs/        # Precomputed test predictions, metrics, and high-res figures
-```
-
----
-
-## 📖 Citation
-
-```bibtex
-@inproceedings{samfc2027aciids,
-  title     = {Slot-Attributed Multi-Task Learning for Fact-Checking},
-  author    = {Anonymous Authors},
-  booktitle = {Proceedings of the 19th Asian Conference on Intelligent Information and Database Systems (ACIIDS 2027)},
-  year      = {2027},
-  publisher = {Springer}
-}
 ```
