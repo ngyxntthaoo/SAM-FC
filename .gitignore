@@ -1,0 +1,30 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Heavy training weights
+outputs/checkpoints/
+*.pt
+*.bin
+*.safetensors
+
+# Raw benchmark datasets (require author permissions)
+data/dataset_raw/*.csv
+data/dataset_raw/*.zip
+data/dataset_raw/*.tar.gz
+data/dataset_raw/*.jsonl

@@ -1,0 +1,298 @@
+{
+  "dataset": "vifactcheck",
+  "seed": 1,
+  "eval_split": "test",
+  "num_test_samples": 1447,
+  "num_dev_samples": 723,
+  "results": {
+    "full": {
+      "label": "CG-SAP Large (Full, seed 1)",
+      "config": {
+        "name": "full",
+        "label": "CG-SAP Large (Full, seed 1)",
+        "use_nli": true,
+        "use_conflict_head": true,
+        "use_gate": true,
+        "lambda_conflict": 0.35,
+        "lambda_consistency": 0.2
+      },
+      "best_epoch": 8,
+      "train_minutes": 0.0,
+      "dev_macro_f1": 0.889276849208648,
+      "dev_accuracy": 0.8893499308437067,
+      "test_macro_f1": 0.8936943811223986,
+      "test_accuracy": 0.8935729094678645,
+      "per_class_f1": {
+        "Supported": 0.8839024390243903,
+        "Refuted": 0.8833151581243184,
+        "NEI": 0.9138655462184874
+      },
+      "conflict_slot_acc": 0.7158119658119658,
+      "confusion_matrix": [
+        [
+          453,
+          28,
+          27
+        ],
+        [
+          44,
+          405,
+          19
+        ],
+        [
+          20,
+          16,
+          435
+        ]
+      ]
+    },
+    "wo_nli": {
+      "label": "w/o NLI intermediate fine-tuning",
+      "config": {
+        "name": "wo_nli",
+        "label": "w/o NLI intermediate fine-tuning",
+        "use_nli": false,
+        "use_conflict_head": true,
+        "use_gate": true,
+        "lambda_conflict": 0.35,
+        "lambda_consistency": 0.2
+      },
+      "best_epoch": 8,
+      "train_minutes": 64.1,
+      "dev_macro_f1": 0.8781968673510868,
+      "dev_accuracy": 0.8782849239280774,
+      "test_macro_f1": 0.8817153323198381,
+      "test_accuracy": 0.8818244644091223,
+      "per_class_f1": {
+        "Supported": 0.8795298726738492,
+        "Refuted": 0.869281045751634,
+        "NEI": 0.8963350785340314
+      },
+      "conflict_slot_acc": 0.7136752136752137,
+      "confusion_matrix": [
+        [
+          449,
+          29,
+          30
+        ],
+        [
+          43,
+          399,
+          26
+        ],
+        [
+          21,
+          22,
+          428
+        ]
+      ]
+    },
+    "wo_diff_markers": {
+      "label": "w/o diff markers (<diff>...</diff>)",
+      "config": {
+        "name": "wo_diff_markers",
+        "label": "w/o diff markers (<diff>...</diff>)",
+        "use_nli": true,
+        "use_diff_markers": false,
+        "use_conflict_head": true,
+        "use_gate": true,
+        "lambda_conflict": 0.35,
+        "lambda_consistency": 0.2
+      },
+      "best_epoch": 5,
+      "train_minutes": 66.9,
+      "dev_macro_f1": 0.8836595901112029,
+      "dev_accuracy": 0.8838174273858921,
+      "test_macro_f1": 0.8875652798881416,
+      "test_accuracy": 0.8880442294402211,
+      "per_class_f1": {
+        "Supported": 0.892128279883382,
+        "Refuted": 0.8741573033707866,
+        "NEI": 0.8964102564102564
+      },
+      "conflict_slot_acc": 0.6346153846153846,
+      "confusion_matrix": [
+        [
+          459,
+          17,
+          32
+        ],
+        [
+          44,
+          389,
+          35
+        ],
+        [
+          18,
+          16,
+          437
+        ]
+      ]
+    },
+    "wo_gate": {
+      "label": "w/o conflict-slot gate",
+      "config": {
+        "name": "wo_gate",
+        "label": "w/o conflict-slot gate",
+        "use_nli": true,
+        "use_conflict_head": true,
+        "use_gate": false,
+        "lambda_conflict": 0.35,
+        "lambda_consistency": 0.2
+      },
+      "best_epoch": 3,
+      "train_minutes": 63.5,
+      "dev_macro_f1": 0.8795797418401504,
+      "dev_accuracy": 0.8796680497925311,
+      "test_macro_f1": 0.8877275881111238,
+      "test_accuracy": 0.8873531444367657,
+      "per_class_f1": {
+        "Supported": 0.8808193668528864,
+        "Refuted": 0.8788546255506607,
+        "NEI": 0.9035087719298246
+      },
+      "conflict_slot_acc": 0.6196581196581197,
+      "confusion_matrix": [
+        [
+          473,
+          19,
+          16
+        ],
+        [
+          56,
+          399,
+          13
+        ],
+        [
+          37,
+          22,
+          412
+        ]
+      ]
+    },
+    "wo_consistency": {
+      "label": "w/o consistency loss",
+      "config": {
+        "name": "wo_consistency",
+        "label": "w/o consistency loss",
+        "use_nli": true,
+        "use_diff_markers": true,
+        "use_conflict_head": true,
+        "use_gate": true,
+        "lambda_conflict": 0.35,
+        "lambda_consistency": 0.0
+      },
+      "best_epoch": 5,
+      "train_minutes": 65.2,
+      "dev_macro_f1": 0.8920042913850446,
+      "dev_accuracy": 0.8921161825726142,
+      "test_macro_f1": 0.8858348808632511,
+      "test_accuracy": 0.8859709744298548,
+      "per_class_f1": {
+        "Supported": 0.8782435129740519,
+        "Refuted": 0.8788546255506607,
+        "NEI": 0.9004065040650406
+      },
+      "conflict_slot_acc": 0.6858974358974359,
+      "confusion_matrix": [
+        [
+          440,
+          28,
+          40
+        ],
+        [
+          39,
+          399,
+          30
+        ],
+        [
+          15,
+          13,
+          443
+        ]
+      ]
+    },
+    "wo_slot_detection": {
+      "label": "w/o conflict-slot detection (+ gate, consistency)",
+      "config": {
+        "name": "wo_slot_detection",
+        "label": "w/o conflict-slot detection (+ gate, consistency)",
+        "use_nli": true,
+        "use_diff_markers": true,
+        "use_conflict_head": false,
+        "use_gate": false,
+        "lambda_conflict": 0.0,
+        "lambda_consistency": 0.0
+      },
+      "best_epoch": 8,
+      "train_minutes": 63.6,
+      "dev_macro_f1": 0.891895277471352,
+      "dev_accuracy": 0.8921161825726142,
+      "test_macro_f1": 0.8901541054661113,
+      "test_accuracy": 0.8901174844505875,
+      "per_class_f1": {
+        "Supported": 0.8852459016393442,
+        "Refuted": 0.8755458515283843,
+        "NEI": 0.9096705632306057
+      },
+      "conflict_slot_acc": null,
+      "confusion_matrix": [
+        [
+          459,
+          28,
+          21
+        ],
+        [
+          46,
+          401,
+          21
+        ],
+        [
+          24,
+          19,
+          428
+        ]
+      ]
+    },
+    "wo_pair_pooling": {
+      "label": "w/o pair-pooling",
+      "config": {
+        "name": "wo_pair_pooling",
+        "label": "w/o pair-pooling",
+        "use_pair_pooling": false
+      },
+      "dev_macro_f1": 0.8892,
+      "test_macro_f1": 0.8949,
+      "test_accuracy": 0.895,
+      "per_class_f1": {
+        "Supported": 0.8897,
+        "Refuted": 0.8816,
+        "NEI": 0.9135
+      },
+      "conflict_slot_acc": 0.6538,
+      "delta_f1": 0.12,
+      "mcnemar_p": 0.892
+    },
+    "wo_diff_pooling": {
+      "label": "w/o diff markers + pair-pooling",
+      "config": {
+        "name": "wo_diff_pooling",
+        "label": "w/o diff markers + pair-pooling",
+        "use_diff_markers": false,
+        "use_pair_pooling": false
+      },
+      "dev_macro_f1": 0.8891,
+      "test_macro_f1": 0.9005,
+      "test_accuracy": 0.9005,
+      "per_class_f1": {
+        "Supported": 0.8996,
+        "Refuted": 0.8957,
+        "NEI": 0.9062
+      },
+      "conflict_slot_acc": 0.6645,
+      "delta_f1": 0.68,
+      "mcnemar_p": 0.308
+    }
+  },
+  "saved_at": "2026-10-24T13:16:14.034842+00:00"
+}
