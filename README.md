@@ -1,16 +1,16 @@
-# SAM-FC: Slot-Attributed Multi-Task Learning for Fact-Checking
+# SAMV-FC: Slot-Attributed Multi-Task Learning for Fact-Checking
 
 Official PyTorch implementation for **"Slot-Attributed Multi-Task Learning for Fact-Checking"** (*ACIIDS 2027*).
 
-SAM-FC is an explainable pair-level verifier for Vietnamese fact verification. It incorporates syllable-level `<diff>` markers, joint pair pooling, and a conflict-gated modulation branch to jointly predict verdicts and identify fine-grained conflict types (**Numeric**, **Negation**, **Entity**, **Temporal**) on Refuted claims.
+SAMV-FC is an explainable pair-level verifier for Vietnamese fact verification. It incorporates syllable-level `<diff>` markers, joint pair pooling, and a conflict-gated modulation branch to jointly predict verdicts and identify fine-grained conflict types (**Numeric**, **Negation**, **Entity**, **Temporal**) on Refuted claims.
 
 ---
 
 ## ⚡ Quick Start
 
 ```bash
-git clone https://github.com/ngyxntthaoo/SAM-FC.git
-cd SAM-FC
+git clone https://github.com/ngyxntthaoo/SAMV-FC.git
+cd SAMV-FC
 pip install -r requirements.txt
 ```
 
@@ -63,7 +63,7 @@ All evaluation scripts directly reproduce the exact tables and figures in the pa
 
 ## 🛠️ Training & Custom Runs
 
-Train SAM-FC from scratch:
+Train SAMV-FC from scratch:
 ```bash
 # ViFactCheck
 python scripts/train_main.py --dataset vifactcheck --epochs 8 --batch_size 4
@@ -95,7 +95,7 @@ Self-contained GPU notebooks are available in `notebooks/`:
 ## 📂 Repository Structure
 
 ```text
-SAM-FC/
+SAMV-FC/
 ├── data/           # Dataset directory layout and raw CSV storage
 ├── src/            # Core models, loss functions, diff markers, and trainer
 ├── scripts/        # Reproduction scripts for Tables 2-5, Figures 3-4, and training
